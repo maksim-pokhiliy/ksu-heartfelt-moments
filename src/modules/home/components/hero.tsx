@@ -23,7 +23,7 @@ export const Hero = () => {
       }}
     >
       <Stack spacing={2} sx={{ width: { xs: "100%", md: "50%" } }}>
-        <AppTypography variant="h1" sx={{ textAlign: "center" }} squiggly>
+        <AppTypography variant="h2" sx={{ textAlign: "center" }} squiggly>
           {t("hero.title")}
         </AppTypography>
 
@@ -32,7 +32,13 @@ export const Hero = () => {
         </AppTypography>
       </Stack>
 
-      <Box sx={{ position: "relative", width: { xs: "100%", md: "50%" }, height: "500px" }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: { xs: "100%", md: "50%" },
+          height: { xs: "200px", md: "500px" },
+        }}
+      >
         <Image
           src={hero}
           alt="Picture of the author"

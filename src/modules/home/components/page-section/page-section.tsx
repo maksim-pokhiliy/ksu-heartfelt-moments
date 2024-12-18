@@ -26,7 +26,7 @@ export const PageSection = ({ title, subtitle, images, center = false }: PageSec
         position: "relative",
       }}
     >
-      <AppTypography variant="h1" sx={{ textAlign: "center" }} squiggly>
+      <AppTypography variant="h2" sx={{ textAlign: "center" }} squiggly>
         {title}
       </AppTypography>
 

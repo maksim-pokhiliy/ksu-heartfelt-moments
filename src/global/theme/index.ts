@@ -72,9 +72,9 @@ export const theme = createTheme(baseTheme, {
     },
     background: {
       default: "#0F1115",
-      paper: "#FF0088",
+      paper: "#FFFFFF",
     },
-    divider: "#DCDCDC",
+    divider: "#FF0088",
   },
   typography: {
     h1: {

@@ -1,8 +1,8 @@
 "use client";
 
-import { Box, Container, ContainerProps } from "@mui/material";
+import { Box, Container, BoxProps } from "@mui/material";
 
-export type AppContainerProps = ContainerProps;
+export type AppContainerProps = BoxProps;
 
 export const AppContainer = ({ children, ...props }: AppContainerProps) => {
   return (
@@ -26,8 +26,9 @@ export const AppContainer = ({ children, ...props }: AppContainerProps) => {
           zIndex: 0,
         },
       }}
+      {...props}
     >
-      <Container maxWidth="md" sx={{ backgroundColor: "background.default" }} {...props}>
+      <Container maxWidth="md" sx={{ backgroundColor: "background.default" }}>
         {children}
       </Container>
     </Box>

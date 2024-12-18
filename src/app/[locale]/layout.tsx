@@ -3,6 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { Header } from "@app/global/components/base/header";
 import { AppContainer } from "@app/global/components/containers/app-container";
 import { LocalizationProvider } from "@app/global/components/providers/localization-provider";
 import { theme } from "@app/global/theme";
@@ -36,6 +37,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
             <CssBaseline />
 
             <LocalizationProvider namespaces={i18nNamespaces} locale={locale}>
+              <Header />
               <AppContainer component="main">{children}</AppContainer>
             </LocalizationProvider>
           </ThemeProvider>
