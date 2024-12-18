@@ -1,0 +1,77 @@
+version: "3"
+
+#
+# Tasks
+tasks:
+  #
+  # Project
+  build:
+    desc: Build project
+    cmds:
+      - yarn build
+
+  start:
+    desc: Start app in dev mode
+    cmds:
+      - yarn dev
+
+  clean-start:
+    desc: Clean project dependencies & start
+    cmds:
+      - rm -rf node_modules
+      - rm -rf .next
+      - yarn cache clean --all
+      - yarn install --immutable
+      - yarn dev
+
+  preview:
+    desc: Preview app in dev mode
+    cmds:
+      - yarn build
+      - yarn start
+
+  vercel-deploy:
+    desc: Deploy app to the Vercel
+    prompt: Are you sure you want to deploy project to the Vercel environment?
+    cmds:
+      - ./scripts/check_branch.sh
+      - yarn lint
+      - yarn format
+      - yarn json-lint
+      - yarn tscheck
+      - vercel --prod
+      - git status
+
+  #
+  # Dependencies
+  install:
+    desc: Install dependencies
+    cmds:
+      - yarn
+
+  ci:
+    desc: Install dependencies for CI
+    cmds:
+      - yarn install --immutable
+
+  lint:
+    desc: Lint code & fromat it and type check typescript
+    cmds:
+      - yarn lint
+      - yarn format
+      - yarn json-lint
+      - yarn tscheck
+
+  lint-check:
+    desc: Lint code (check only without formatting)
+    cmds:
+      - yarn lint-check
+      - yarn json-check
+      - yarn tscheck
+
+  clean:
+    desc: Clean project dependencies & build
+    cmds:
+      - rm -rf node_module
+      - rm -rf .next
+      - yarn cache clean --all

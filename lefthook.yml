@@ -1,0 +1,23 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      files: git diff --name-only --staged
+      glob: "{app,public}/**/*.{js,ts,jsx,tsx,d.ts}"
+      run: npx eslint --cache --cache-location node_modules/.cache/.eslint {files}
+
+    lint-json:
+      files: git diff --name-only --staged
+      glob: "{app,public}/**/*.{json}"
+      run: npx prettier --check {files} --plugin=prettier-plugin-sort-json
+
+    types:
+      files: git diff --name-only --staged
+      glob: "{app,public}/**/*.{js,ts,jsx,tsx,d.ts}"
+      run: npx tsc --noEmit
+
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: npx commitlint --edit

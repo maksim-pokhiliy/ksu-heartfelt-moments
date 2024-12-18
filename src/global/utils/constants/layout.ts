@@ -1,0 +1,1 @@
+export const BACK_TO_TOP_ANCHOR = "BACK_TO_TOP_ANCHOR";

@@ -1,0 +1,32 @@
+name: CI Tests
+
+on:
+  push:
+    paths-ignore:
+      - ".github/**"
+      - "public/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js and Yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint
+        run: yarn lint-check
+
+      - name: JSON check
+        run: yarn json-check
+
+      - name: Typescript check
+        run: yarn tscheck
