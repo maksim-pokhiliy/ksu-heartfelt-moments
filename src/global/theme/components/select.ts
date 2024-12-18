@@ -4,8 +4,6 @@ export const MuiSelect: Components<Theme & CssVarsTheme>["MuiSelect"] = {
   styleOverrides: {
     root: ({ theme }) => ({
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: theme.palette.background.default,
-      border: `2px solid ${theme.palette.divider}`,
       "&:hover": {
         backgroundColor: theme.palette.action.hover,
       },
@@ -24,7 +22,7 @@ export const MuiSelect: Components<Theme & CssVarsTheme>["MuiSelect"] = {
       fontSize: theme.typography.body2.fontSize,
     }),
     icon: ({ theme }) => ({
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.primary,
     }),
   },
 

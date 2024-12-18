@@ -1,5 +1,4 @@
 import { MenuItem } from "@mui/material";
-import React from "react";
 
 import { AppInput, AppInputProps } from "./app-input";
 
@@ -12,7 +11,7 @@ export type AppSelectProps = AppInputProps & {
   options: Option[];
 };
 
-export const AppSelect: React.FC<AppSelectProps> = ({ label, options, placeholder, ...props }) => {
+export const AppSelect = ({ label, options, placeholder, ...props }: AppSelectProps) => {
   return (
     <AppInput
       select

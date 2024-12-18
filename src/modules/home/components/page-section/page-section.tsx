@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Theme, useMediaQuery } from "@mui/material";
 
 import { AppTypography } from "@app/global/components/ui/app-typography";
 
@@ -12,6 +12,8 @@ interface PageSectionProps {
 }
 
 export const PageSection = ({ title, subtitle, images, center = false }: PageSectionProps) => {
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
@@ -26,12 +28,12 @@ export const PageSection = ({ title, subtitle, images, center = false }: PageSec
         position: "relative",
       }}
     >
-      <AppTypography variant="h2" sx={{ textAlign: "center" }} squiggly>
+      <AppTypography variant={isMobile ? "h2" : "h1"} sx={{ textAlign: "center" }} squiggly>
         {title}
       </AppTypography>
 
       <AppTypography
-        variant="body2"
+        variant="h6"
         sx={{ mb: 4, textAlign: "center", width: { xs: "100%", md: "60%" } }}
       >
         {subtitle}

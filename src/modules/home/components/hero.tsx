@@ -37,6 +37,8 @@ export const Hero = () => {
           position: "relative",
           width: { xs: "100%", md: "50%" },
           height: { xs: "200px", md: "500px" },
+          borderRadius: (theme) => theme.typography.pxToRem(8),
+          overflow: "hidden",
         }}
       >
         <Image

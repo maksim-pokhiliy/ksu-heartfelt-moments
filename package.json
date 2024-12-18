@@ -27,7 +27,8 @@
     "next-i18n-router": "^5.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.2.0"
+    "react-i18next": "^15.2.0",
+    "vercel": "^39.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",

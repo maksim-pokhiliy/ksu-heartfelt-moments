@@ -50,6 +50,7 @@ export const Header = () => {
             placeholder="Select Language"
             sx={{ width: 150 }}
             size="small"
+            variant="filled"
           />
         </Toolbar>
       </AppBar>
